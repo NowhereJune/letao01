@@ -4,17 +4,17 @@
  *      2.如果当前用户没登录   将用户拦截到登录页
  */
 $.ajax({
-
-    type:"get",
-    url: "/employee/checkRootLogin",
-    dataType:"json",
-    success:function (info) {
-        if( info.error === 400 ){
+    type: 'get',
+    url: '/employee/checkRootLogin',
+    dataType: 'json',
+    success: function (info) {
+        if (info.error === 400) {
+            //  拦截到登录页
             location.href = "login.html"
-        }
-        if ( info.success ) {
+        } if (info.success) {
             // 登录成功
             console.log("登录成功");
         }
+
     }
 })

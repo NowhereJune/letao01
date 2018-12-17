@@ -27,9 +27,9 @@
             <ul>
                 <li> <a href="user.html"><i class="glyphicon glyphicon-user"></i><span>用户管理</span></a></li>
                 <li>
-                    <a href="javascript:;" class="category"><i class="glyphicon glyphicon-list"></i><span>分类管理</span></a>
-                    <div class="classify" style="display:none">
-                        <a href="first.html">一级分类</a>
+                    <a href="javascript:;" class="category" style="display: block"><i class="glyphicon glyphicon-list"></i><span>分类管理</span></a>
+                    <div class="classify">
+                        <a class="current" href="first.html">一级分类</a>
                         <a href="second.html">二级分类</a></div>
 
                 </li>
@@ -40,7 +40,6 @@
 
     <!-- 主体部分 -->
     <div class="lt_main">
-        <!-- 导航 -->
         <div class="lt_topbar">
             <a href="#" class="pull-left icon_left"><i class="glyphicon glyphicon-align-justify"></i></a>
             <a href="#" class="pull-right icon_right"><i class="glyphicon glyphicon-log-out"></i></a>
@@ -50,42 +49,33 @@
                 <li><a href="index.html">管理系统</a></li>
                 <li class="active">首页</li>
             </ol>
-
-
-            <!-- canvas -->
-            <div class="echarts_box">
-                <div class="echarts_left pull-left"></div>
-                <div class="echarts_right pull-right"></div>
-            </div>
         </div>
         <!-- Small modal -->
         <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small
             modal</button> -->
+        <!-- 模态框 主体内容 -->
+        <div id="myModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <!--  头部 -->
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
+                    </div>
+                    <!-- 内容 -->
+                    <div class="modal-body red">
+                        <i class="glyphicon glyphicon-info-sign"></i><span>您确定要退出后台管理系统吗？</span>
+                    </div>
+                    <!-- 尾部 -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="button" class="confirm btn btn-primary">退出</button>
+                    </div>
 
-
-
-    </div>
-    <!-- 模态框 主体内容 -->
-    <div id="myModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <!--  头部 -->
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
                 </div>
-                <!-- 内容 -->
-                <div class="modal-body red">
-                    <i class="glyphicon glyphicon-info-sign"></i><span>您确定要退出后台管理系统吗？</span>
-                </div>
-                <!-- 尾部 -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                    <button type="button" class="confirm btn btn-primary">退出</button>
-                </div>
-
             </div>
         </div>
+
     </div>
 
 
@@ -94,10 +84,8 @@
     <script src="./lib/bootstrap/js/bootstrap.js"></script>
     <script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
     <script src="./lib/nprogress/nprogress.js"></script>
-    <script src="./lib/echarts/echarts.min.js"></script>
     <script src="js/common.js"></script>
     <script src="./js/isLogin.js"></script>
-    <script src="js/index.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,123 @@
+ul{
+    list-style: none;
+    padding: 0;
+}
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+.red{
+    color: #A94442;
+}
+/* 乐淘侧边栏样式*/
+.lt_aside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 180px;
+  height: 100%;
+  background-color: #222d32;
+  z-index: 999;
+  transition: all 1s;
+  .brand {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: #367fa9;
+    a {
+      color: #fff;
+      font-size: 24px;
+    }
+  }
+  .user {
+    width: 180px;
+    height: 180px;
+    padding-top: 30px;
+    img {
+      width: 80px;
+      height: 80px;
+      display: block;
+        margin: 0 auto;
+  border-radius: 50%;
+    }
+    p{
+        font-size: 18px;
+        height: 40px;
+        line-height: 40px;
+        color: #fff;
+        text-align: center;
+    }
+  }
+  .nav a {
+    // width: 180px;
+    height: 40px;
+    padding-left: 40px;
+    display: block;
+    line-height: 40px;
+    border-left: 3px solid transparent;
+    color: #fff;
+      i {
+          margin-right: 4px;
+      }
+    }
+    .nav a.current{
+        background-color: #1D1F21;
+        border-left: 3px solid #006699;
+    }
+    .nav .classify{
+        padding-left: 20px;
+        // display: none;
+        // width: 100%;
+        
+    }
+}
+.lt_aside.hidemenu{
+    left: -180px;
+}
+/* 乐淘主体头部部分*/
+.lt_main{
+    height: 2000px;
+    padding-left: 180px;
+    padding-top: 50px;
+    transition: all 1s;
+}
+.lt_main.hidemenu {
+    padding-left: 0;
+}
+.lt_topbar{
+    width: 100%;
+    height: 50px;
+    background-color: #3C8DBC;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding-left: 180px;
+    transition: all 1s;
+    .icon_left,.icon_right{
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        color: #fff;
+        line-height: 50px;
+        text-align: center;
+    }
+}
+.lt_topbar.hidemenu{
+    padding-left: 0;
+}
+.lt_main{
+    .container-fluid{
+        .breadcrumb{
+            margin-top: 20px;
+        }
+    }
+}
+.echarts_left,
+.echarts_right {
+  width: 48%;
+  height: 400px;
+//   background-color: skyblue;
+}
