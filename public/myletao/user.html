@@ -25,10 +25,10 @@
         <!-- 导航 -->
         <div class="nav">
             <ul>
-                <li > <a class="current" href="user.html"><i class="glyphicon glyphicon-user"></i><span>用户管理</span></a></li>
+                <li> <a class="current" href="user.html"><i class="glyphicon glyphicon-user"></i><span>用户管理</span></a></li>
                 <li>
                     <a href="#" class="category"><i class="glyphicon glyphicon-list"></i><span>分类管理</span></a>
-<div class="classify" style="display:none">
+                    <div class="classify" style="display:none">
                         <a href="first.html">一级分类</a>
                         <a href="second.html">二级分类</a></div>
 
@@ -49,7 +49,55 @@
                 <li><a href="index.html">管理系统</a></li>
                 <li class="active">首页</li>
             </ol>
+            <div class="lt_content">
+                <!--
+                    1. table 类赋予表格基础样式
+                    2.table-bordered给表格添加边框
+                    3.table-hover 鼠标悬停
+                   -->
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>用户名</th>
+                            <th>手机号</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <!-- !!! -->
+                    </tbody>
+                </table>
+
+                <!-- 准备一个分页容器, 如果 3 的版本, 需要 ul -->
+                <div class="pull-right">
+                    <ul id="paginator"></ul>
+                </div>
+            </div>
+
         </div>
+        <!-- user禁用模态框 -->
+        <div class="modal fade" id="userModal" tabindex="-1">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                        <h4 class="modal-title">温馨提示</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p class="red"><i class="glyphicon glyphicon-info-sign"></i>你确定要执行此操作吗？</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary" id="submitBtn">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <!-- Small modal -->
         <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small
             modal</button> -->
@@ -77,15 +125,38 @@
         </div>
 
     </div>
-
-
+    <!--  准备模板引擎 -->
+    <script type="text/html" id="tpl">
+        {{each rows v i}}
+            <tr>
+                <!-- 当前页是第几条 还要加上 前面页的条数 -->
+                <td>{{ i+ 1}}</td>
+                <td>{{v.username}}</td>
+                <td>{{v.mobile}}</td>
+                <td>{{v.isDelete === 1 ? '正常':'禁用'}}</td>
+                <td data-id="{{v.id}}">
+                {{ if  v.isDelete === 1}}
+                <!-- isDelete = 1  用户已启用 -->
+                <!-- isDelete = 0  用户已禁用 -->
+                    <button class="btn btn-danger">禁用</button>
+                    {{else}}
+                    <button class="btn btn-success">启用</button>
+                {{/if}}
+                </td>
+            </tr>
+        {{/each}}
+    
+    </script>
 
     <script src="./lib/jquery/jquery.js"></script>
     <script src="./lib/bootstrap/js/bootstrap.js"></script>
     <script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./lib/bootstrap-paginator/bootstrap-paginator.js"></script>
     <script src="./lib/nprogress/nprogress.js"></script>
     <script src="js/common.js"></script>
     <script src="./js/isLogin.js"></script>
+    <script src="./js/user.js"></script>
 </body>
 
 </html>
