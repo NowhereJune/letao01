@@ -11,6 +11,9 @@ a:active {
 .red {
   color: #A94442;
 }
+.mt_20{
+  margin-top: 20px;
+}
 /* 乐淘侧边栏样式*/
 .lt_aside {
   position: fixed;

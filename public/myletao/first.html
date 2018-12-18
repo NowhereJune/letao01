@@ -49,43 +49,104 @@
                 <li><a href="index.html">管理系统</a></li>
                 <li class="active">首页</li>
             </ol>
-        </div>
-        <!-- Small modal -->
-        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small
-            modal</button> -->
-        <!-- 模态框 主体内容 -->
-        <div id="myModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-            <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                    <!--  头部 -->
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
-                    </div>
-                    <!-- 内容 -->
-                    <div class="modal-body red">
-                        <i class="glyphicon glyphicon-info-sign"></i><span>您确定要退出后台管理系统吗？</span>
-                    </div>
-                    <!-- 尾部 -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                        <button type="button" class="confirm btn btn-primary">退出</button>
-                    </div>
+            <div class="lt_content">
+                <button class="btn btn-default" id="addBtn">添加分类</button>
+                <table class="table table-bordered table-hover mt_20">
+                    <thead>
+                        <tr>
+                            <th>序号 </th>
+                            <th>一级分类名</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 动态渲染内容 -->
+                    </tbody>
+                </table>
 
+                <div class="pull-right">
+                    <!-- 准备一个 ul -->
+                    <ul id="paginator"></ul>
                 </div>
+
             </div>
+            <!--  -->
         </div>
+        <!-- 主体部分的内容 -->
+        <script type="text/html" id="ftpl">
+            {{each rows v i}}
+            <tr>
+                <td>
+                    {{ i + 1 + (page -1) * size}}
+                </td>
+                <td>
+                    {{v.categoryName}}
+                </td>
+            </tr>
+
+
+        
+        {{/each}}
+        </script>
 
     </div>
+    <!-- 添加模态框 -->
+    <div class="modal fade" id="addModal" tabindex="-1">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <form id="form">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                        <h4 class="modal-title">添加分类</h4>
+                    </div>
+                    <div class="modal-body">
+                        <!-- 每一行一个 form-group, 表单校验插件依赖于这个 form-group 父元素的 -->
+                        <div class="form-group">
+                            <input type="text" name="categoryName" class="form-control" placeholder="请输入一级分类名称">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="submit" class="btn btn-primary">添加</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
+    <!-- 模态框 主体内容 -->
+    <div id="myModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <!--  头部 -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
+                </div>
+                <!-- 内容 -->
+                <div class="modal-body red">
+                    <i class="glyphicon glyphicon-info-sign"></i><span>您确定要退出后台管理系统吗？</span>
+                </div>
+                <!-- 尾部 -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="confirm btn btn-primary">退出</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--  模板 -->
 
 
     <script src="./lib/jquery/jquery.js"></script>
     <script src="./lib/bootstrap/js/bootstrap.js"></script>
     <script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
     <script src="./lib/nprogress/nprogress.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
     <script src="js/common.js"></script>
     <script src="./js/isLogin.js"></script>
+    <script src="./js/first.js"></script>
 </body>
 
 </html>
