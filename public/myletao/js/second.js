@@ -66,11 +66,14 @@ $(function () {
         // 获取a的文本
         var txt = $(this).text()
         // 设置给按钮
-        $('#dropdownMenu1').text(txt)
+        $('#dropdownText').text(txt)
 
         //  获取a存的id 一级分类id
         var id = $(this).data('id')
-        $('[name="categoryId]').val(id)
+        console.log(id)
+
+       $('[name="categoryId"]').val(id)
+       
          $('#form').data("bootstrapValidator").updateStatus("categoryId", "VALID")
     })
 
