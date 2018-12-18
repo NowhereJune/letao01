@@ -80,7 +80,7 @@ $(function () {
                     render()
 
                         //  重置表单状态     true  重置表单状态和内容
-                    $('#form'),data("bootstrapValidator").resetForm(true)
+                    $('#form').data("bootstrapValidator").resetForm(true)
                 }
             }
         })
