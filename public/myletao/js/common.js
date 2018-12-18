@@ -20,7 +20,7 @@
 $(document).ajaxStart(function () {
     //  第一个ajax发送时 开启进度条
     NProgress.start();
-    console.log(1);
+    // console.log(1);
 })
 
 $(document).ajaxStop(function () {

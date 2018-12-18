@@ -63,7 +63,7 @@ $(function () {
     $('#form').on('success.form.bv',function (e) {
         // 阻止默认的提交
         e.preventDefault()
-
+        console.log(1);
         // 发送ajax
         $.ajax({
             type:'post',
