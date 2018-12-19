@@ -130,7 +130,7 @@
         {{each rows v i}}
             <tr>
                 <!-- 当前页是第几条 还要加上 前面页的条数 -->
-                <td>{{ i+ 1}}</td>
+                <td>{{ i+ 1 + ( page -1) *size}}</td>
                 <td>{{v.username}}</td>
                 <td>{{v.mobile}}</td>
                 <td>{{v.isDelete === 1 ? '正常':'禁用'}}</td>
